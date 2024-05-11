@@ -30,10 +30,11 @@ images: AppImages.pieceofcake,
     price: 45,
   ),
   SweetModel(
-    images: AppImages.pieceofcake,
-    title: "Piece of cake",
+    images: AppImages.donuts,
+    title: "Donuts",
     dec:"Flawor : Creamy" ,
     price: 45,
+
   ),
   SweetModel(
     images: AppImages.pieceofcake,
@@ -42,10 +43,41 @@ images: AppImages.pieceofcake,
     price: 45,
   ),
   SweetModel(
+    images: AppImages.donuts,
+    title: "Donuts",
+    dec:"Flawor : Creamy" ,
+    price: 45,
+
+  ),
+
+  SweetModel(
     images: AppImages.pieceofcake,
     title: "Piece of cake",
     dec:"Flawor : Creamy" ,
     price: 45,
+  ),
+
+  SweetModel(
+    images: AppImages.donuts,
+    title: "Donuts",
+    dec:"Flawor : Creamy" ,
+    price: 45,
+
+  ),
+
+  SweetModel(
+    images: AppImages.pieceofcake,
+    title: "Piece of cake",
+    dec:"Flawor : Creamy" ,
+    price: 45,
+  ),
+
+  SweetModel(
+    images: AppImages.donuts,
+    title: "Donuts",
+    dec:"Flawor : Creamy" ,
+    price: 45,
+
   ),
 
 

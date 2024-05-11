@@ -13,4 +13,6 @@ class AppImages{
   static String florevitamin="assets/images/florevitamin.png";
   static String chocolatedrink="assets/images/chocolatedrink.png";
   static String spanishlatte="assets/images/spanishlatte.png";
+  static String bestselling="assets/images/bestselling.png";
+  static String vector="assets/images/vector.png";
 }

@@ -1,4 +1,4 @@
-import 'package:flower_app/features/data/sweets_list.dart';
+import 'package:flower_app/features/data/models/sweets_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -7,16 +7,14 @@ import 'package:flutter/widgets.dart';
 class SweetWidget extends StatefulWidget {
    SweetWidget({super.key,required this.index});
   int index;
-
   @override
   State<SweetWidget> createState() => _SweetWidgetState();
 }
-
 class _SweetWidgetState extends State<SweetWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(3.0),
+      padding: const EdgeInsets.all(8.0),
       child: Stack(
         alignment: Alignment.bottomRight,
         children: [
@@ -32,11 +30,10 @@ class _SweetWidgetState extends State<SweetWidget> {
             ),
               borderRadius: BorderRadius.circular(20),
             ),
-
-
             child: Column(
               children: [
-                Image.asset(Sweets[widget.index].images,height: 90,),
+                Expanded(
+                    child: Image.asset(Sweets[widget.index].images,height: 90,)),
                 Text(Sweets[widget.index].title),
                 Text(Sweets[widget.index].dec,
                   style:TextStyle(
@@ -62,6 +59,7 @@ class _SweetWidgetState extends State<SweetWidget> {
           ),
           Positioned(
             top: 0,
+            right: 6,
             child: GestureDetector(
               onTap: () {
                 setState(() {
