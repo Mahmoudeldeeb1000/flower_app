@@ -15,4 +15,5 @@ class AppImages{
   static String spanishlatte="assets/images/spanishlatte.png";
   static String bestselling="assets/images/bestselling.png";
   static String vector="assets/images/vector.png";
+  static String milkshaketext="assets/images/milkshaketext.png";
 }
