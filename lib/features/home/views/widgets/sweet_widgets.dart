@@ -33,13 +33,13 @@ class _SweetWidgetState extends State<SweetWidget> {
             child: Column(
               children: [
                 Expanded(
-                    child: Image.asset(Sweets[widget.index].images,height: 90,)),
-                Text(Sweets[widget.index].title),
-                Text(Sweets[widget.index].dec,
+                    child: Image.asset(sweets[widget.index].images,height: 90,)),
+                Text(sweets[widget.index].title),
+                Text(sweets[widget.index].dec,
                   style:TextStyle(
                     color: Color(0xff959595)
                   ) ,),
-                Text("${Sweets[widget.index].price.toString()}.LE"),
+                Text("${sweets[widget.index].price.toString()}.LE"),
 
 
               ],
@@ -63,11 +63,11 @@ class _SweetWidgetState extends State<SweetWidget> {
             child: GestureDetector(
               onTap: () {
                 setState(() {
-                  Sweets[widget.index].fav =!Sweets[widget.index].fav;
+                  sweets[widget.index].fav =!sweets[widget.index].fav;
                 });
 
               },
-                child: Icon(Sweets[widget.index].fav==true? Icons.favorite: Icons.favorite_border,
+                child: Icon(sweets[widget.index].fav==true? Icons.favorite: Icons.favorite_border,
                 )
             ),
           )

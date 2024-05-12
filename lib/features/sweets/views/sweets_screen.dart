@@ -28,7 +28,7 @@ class Sweets_screen extends StatelessWidget {
           SliverGrid.builder( gridDelegate:SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
           ),
-            itemCount: Sweets.length,
+            itemCount: sweets.length,
             itemBuilder: ( context,  index) {
             return SweetWidget(index: index);
 
