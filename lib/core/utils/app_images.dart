@@ -16,4 +16,6 @@ class AppImages{
   static String bestselling="assets/images/bestselling.png";
   static String vector="assets/images/vector.png";
   static String milkshaketext="assets/images/milkshaketext.png";
+  static String cart ="assets/images/cart.png";
+  static String onbord22 ="assets/images/onbord22.jpg";
 }

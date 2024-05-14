@@ -1,4 +1,6 @@
 import 'package:flower_app/core/utils/app_images.dart';
+import 'package:flower_app/features/Favourite/views/favourite_screen.dart';
+import 'package:flower_app/features/best_selling/views/best_selling_screen.dart';
 import 'package:flower_app/features/data/models/drinks_model.dart';
 import 'package:flower_app/features/data/models/sweets_model.dart';
 import 'package:flower_app/features/home/views/widgets/bannar_widgets.dart';
@@ -6,10 +8,12 @@ import 'package:flower_app/features/home/views/widgets/category_widget.dart';
 import 'package:flower_app/features/home/views/widgets/search_widgets.dart';
 import 'package:flower_app/features/home/views/widgets/seemore.dart';
 import 'package:flower_app/features/home/views/widgets/sweet_widgets.dart';
+import 'package:flower_app/features/product_details/views/product_details_screen.dart';
 import 'package:flower_app/features/search/views/search_screen.dart';
-import 'package:flower_app/features/sweets/views/sweets_screen.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
   @override
@@ -25,7 +29,23 @@ class HomeScreen extends StatelessWidget {
           )
         ],
       ),
-      drawer:Drawer(),
+      drawer:Drawer(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: GestureDetector(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => Favourite_Screen(),));
+            },
+            child: Row(
+              children: [
+                Expanded(child: Icon(Icons.favorite,size: 50,color: Colors.red,)),
+            Spacer(),
+                Text("Favourite",style: TextStyle(fontSize: 20),)
+              ],
+            ),
+          ),
+        ),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: CustomScrollView(
@@ -71,7 +91,7 @@ class HomeScreen extends StatelessWidget {
                 child: SeeMore(
                   ontap: (){
                     Navigator.push(context, MaterialPageRoute(builder: (context) {
-                      return Sweets_screen();
+                      return Best_Selling_Screen();
                     },));
                   },
                   seemoretext: "Best selling",
@@ -80,8 +100,13 @@ class HomeScreen extends StatelessWidget {
             SliverGrid.builder(gridDelegate:SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2
             ), itemBuilder: (c,index){
-              return SweetWidget(
-                index: index,
+              return GestureDetector(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Product_Details_Screen(index: index),));
+                },
+                child: SweetWidget(
+                  index: index,
+                ),
               );
             },
               itemCount:2 ,)

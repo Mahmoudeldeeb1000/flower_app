@@ -1,11 +1,12 @@
 import 'package:flower_app/core/utils/app_images.dart';
 import 'package:flower_app/features/data/models/sweets_model.dart';
 import 'package:flower_app/features/home/views/widgets/sweet_widgets.dart';
+import 'package:flower_app/features/product_details/views/product_details_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Sweets_screen extends StatelessWidget {
-  const Sweets_screen({super.key});
+class Best_Selling_Screen extends StatelessWidget {
+  const Best_Selling_Screen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +31,15 @@ class Sweets_screen extends StatelessWidget {
           ),
             itemCount: sweets.length,
             itemBuilder: ( context,  index) {
-            return SweetWidget(index: index);
+            return GestureDetector(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return Product_Details_Screen(
+                      index: index,
+                    );
+                  },));
+                },
+                child: SweetWidget(index: index));
 
             },)
 

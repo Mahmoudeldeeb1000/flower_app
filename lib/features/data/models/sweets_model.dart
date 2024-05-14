@@ -6,7 +6,8 @@ class SweetModel{
   final String dec;
   final int price;
   bool fav;
-  SweetModel( {required this.images,required this.title,required this.dec,required this.price,this.fav=false});
+ late  int count;
+  SweetModel( {required this.images,required this.title,required this.dec,required this.price,this.fav=false, this.count=0});
 }
 List<SweetModel> sweets = [
   SweetModel(
@@ -97,7 +98,6 @@ List<SweetModel> sweets = [
     dec:'''There are many variations of passages Lorem Ipsum''',
     price: 45,
   ),
-
   SweetModel(
     images: AppImages.oreomilkshake,
     title: "oreomilkshake",
